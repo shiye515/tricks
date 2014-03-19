@@ -1,0 +1,4 @@
+tricks
+======
+
+javascript trick functions
