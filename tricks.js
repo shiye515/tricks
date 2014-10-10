@@ -22,3 +22,14 @@ function dateToStr(date) {
 
 //对象深复制
 var cloneObj = JSON.parse(JSON.stringify(obj));
+
+//编码转换（to Unicode）
+
+function toUnicode(string) {
+    str = ""
+    for (i = 0; i < string.length; i++) {
+        temp = string.charCodeAt(i).toString(16);
+        str += "\\u" + new Array(5 - String(temp).length).join("0") + temp;
+    }
+    return str;
+}
