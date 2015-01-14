@@ -10,16 +10,17 @@
  
 var supports = (function () {
     var div = document.createElement('div'),
-        vendors = 'Khtml O Moz Webkit'.split(' '),
+        vendors = 'khtml o moz webkit ms'.split(' '),
         len = vendors.length;
     return function (prop) {
-        if (prop in div.style) return true;
-        if ('-ms-' + prop in div.style) return true;
+        if (prop in div.style) {return true;}
+        if ('-ms-' + prop in div.style) {return true;}
         prop = prop.replace(/^[a-z]/, function (val) {
             return val.toUpperCase();
         });
-        while (len--) {
-            if (vendors[len] + prop in div.style) {
+        while (len > 0) {
+            len--;
+            if ((vendors[len] + prop) in div.style) {
                 return true;
             }
         }
