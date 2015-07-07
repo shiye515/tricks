@@ -79,3 +79,7 @@ function parseURL(url) {
 
 (12.4 / 4.13) | 0; //结果为3
 ~~(12.4 / 4.13); //结果为3
+
+
+//单行 rating 组件
+"★★★★★☆☆☆☆☆".slice(5 - rating, 10 - rating); 
